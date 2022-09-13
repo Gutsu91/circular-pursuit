@@ -8,7 +8,7 @@ export const useGameStore = defineStore ( {
                 ])
   }),
   getters: {
-    allPlayer: (state) => {
+    allPlayers: (state) => {
       return state.players
     }
   },

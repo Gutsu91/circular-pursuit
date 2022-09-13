@@ -4,7 +4,7 @@
   <input type="text" class="name" placeholder="Joueur/équipe 2">
   <!-- <input type="text" class="name" placeholder="Joueur/équipe 3" v-if="playerCount > 2"> -->
 
-  <p v-for="(member, key) in members" :key="key">{{member}}</p>
+  <p v-for="(member, key) in listMembers" :key="key">{{member}}</p>
 
 </section>
 <button @click="addInput"> + </button>
@@ -24,6 +24,7 @@ const newUser=ref('')
 
 const addUser = () => {
   gameStore.addMember(newUser.value)
+  newUser.value = ""
 }
 
 // let playerCount = 2
