@@ -1,6 +1,6 @@
 <template><main>
-  <h2>Vue classement</h2>
-  <h3 style="color:red">View has been deprecated, I placed the classement functionality inside a component</h3>
+  <h2>Composant classement</h2>
+  
   
     <div id="yes-drop" class="drag-drop" data-value="airBnB"> airBnB </div>
     <div id="yes-drop" class="drag-drop" data-value="Blablacar"> Blablacar </div>

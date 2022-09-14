@@ -1,5 +1,9 @@
 <template>
-<Player />
+<main>
+  
+  <Player />
+
+</main>
 </template>
 
 <script setup>

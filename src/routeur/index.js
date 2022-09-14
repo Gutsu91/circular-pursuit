@@ -4,6 +4,7 @@ import HomeView from '../views/HomeView.vue'
 import DiceView from '../views/DiceView.vue'
 import PlayerView from '../views/PlayerView.vue'
 import PlateauView from '../views/PlateauView.vue'
+import QuestionView from '../views/QuestionView.vue'
 
 
 
@@ -15,8 +16,8 @@ const routes = [
     name: 'home',
     component: HomeView,
     meta : {
-      title: 'Webmarketeer & Front-End Developer',
-      content: 'Moi c\'est François, passionné de web et de marketing digital'
+      title: 'Lancer une partie',
+      content: 'Ceci est un serious game de type expérimental'
     }
   },
   {
@@ -50,6 +51,14 @@ const routes = [
     meta: {
       title: "Vue Plateau"
     }
+   },
+   {
+    path: "/question",
+    name: "question",
+    component: QuestionView,
+    meta: {
+      title: "Vue Question"
+    }
    }
 ]
 
@@ -58,7 +67,7 @@ const router = createRouter({
   routes })
 
 router.beforeEach((to, from, next) => {
- document.title = `Tasty tests | ${to.meta.title}`
+ document.title = `Circular machin | ${to.meta.title}`
  next()
 })
 

@@ -13,6 +13,7 @@
     "@interactjs/auto-start": "^1.10.17",
     "@interactjs/dev-tools": "^1.10.17",
     "@interactjs/interact": "^1.10.17",
+    "axios": "^0.27.2",
     "interactjs": "^1.10.17",
     "pinia": "^2.0.22",
     "vue": "^3.2.37",

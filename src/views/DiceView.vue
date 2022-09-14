@@ -1,5 +1,7 @@
 <template>
-<ThrowDice />
+<main>
+  <ThrowDice />
+</main>
 </template>
 
 <script setup>
