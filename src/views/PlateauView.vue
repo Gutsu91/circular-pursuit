@@ -6,13 +6,14 @@
     <ThrowDice />
   </div>
 
-  <ul class="board">
+  <ul class="board" v-if="randDatas.length > 0">
     <li class="cell start">Départ</li>
     <li v-for="(q, key) in randDatas" :class="test(q.theme)" class="cell">
       {{key+1}}
     </li>
     <li class="cell end">Arrivée</li>
   </ul>
+  <p v-if="randDatas.length === 0">Le plateau n'a pas chargé. Êtes-vous bien passé par l'ajout de joueur ? </p>
 </main>
 
 </template>
