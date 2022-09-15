@@ -23,6 +23,12 @@ export const useGameStore = defineStore ( {
     addMember(member) {
       this.players.push(member)
     },
+    addMember1(member) {
+      this.players.splice(0, 1, member)
+    },
+    addMember2(member) {
+      this.players.splice(1, 1, member)
+    },
     //fetch
      async getDatasApi() {
       const response = await axios.get('https://killer-cepegra.xyz/cockpit-ingrwf10/api/content/items/questions?sort=%7Bnumber%3A%22asc%22%7D')

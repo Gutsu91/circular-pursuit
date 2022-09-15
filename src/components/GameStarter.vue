@@ -15,7 +15,7 @@
       </div>
       <div class="fieldWrapper">
         <input type="checkbox" :v-model="checkboxUser3" @click="unlockInput3"  ref="checkboxUser3" data-id="checkboxUser3" />
-        <input type="text" class="name" placeholder="Joueur/équipe 3" :v-model="newUser3" disabled="true" ref="newUser3" />
+        <input type="text" class="name" placeholder="Joueur/équipe 3" v-model="newUser3" disabled="true" ref="newUser3" />
         <button @click="addUser" class="buttonAddPlayer">+</button>
       </div>
       <div class="fieldWrapper">
@@ -94,12 +94,13 @@ const addUser = () => {
 }
 
 const addUsers = () => {
-  gameStore.addMember({name: newUser1.value})
-  gameStore.addMember({name: newUser2.value})
+  gameStore.addMember1({name: newUser1.value})
+  gameStore.addMember2({name: newUser2.value})
+  gameStore.addMember({name: newUser3.value})
   // newUser3.value.length > 0 && gameStore.addMember({name: newUser3.value})
-  console.log(newUser3)
-  gameStore.addMember({name: newUser4.value})
-  gameStore.addMember({name: newUser5.value})
+  console.log(newUser3.value)
+  // gameStore.addMember({name: newUser4.value})
+  // gameStore.addMember({name: newUser5.value})
   
   newUser1.value = ""
   newUser2.value = ""

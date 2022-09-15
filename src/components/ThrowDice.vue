@@ -1,30 +1,33 @@
 <template>
-<h1>Et je jette le dééééé...</h1>
-<button @click="dice">{{ result || 'bah jette dukon'}}</button>
-<small style="display:block">(le résultat est dans la console pour l'instant)</small>
+<button @click="dice" ref="diceButton">Lancer le dé</button>
+<p>Résultat du dé: {{result}}</p>
 </template>
 
 <script setup>
-  import { ref, reactive } from 'vue'
+  import { ref } from 'vue'
+  const diceButton=ref('')
 
-  let result = reactive('')
+  let result = ref('lancer le dé')
   
 const dice = () => {
   const rand = Math.floor(Math.random()*6) +1
+  diceButton.value.classList.toggle('coucou')
   switch (rand) {
     case 5:
-      result = "?"
+      result.value = "?"
       break
     case 6:
-      result = ":("
+      result.value = ":("
       break
     default:
-      result = rand
+      result.value = rand
   }
-  console.log(result)
 }
 </script>
 
 <style>
+  .coucou {
+    background: red;
+  }
 
 </style>

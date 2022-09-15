@@ -25,7 +25,6 @@ const data = gameStore.getDatasApi()
     </div>
       <nav>
         <RouterLink to="/" class="router-link">Home</RouterLink>
-        <RouterLink to="/dice" class="router-link">Dice</RouterLink>
         <RouterLink to="/player" class="router-link">Joueur</RouterLink>
         <RouterLink to="/plateau" class="router-link">Plateau</RouterLink>
         <RouterLink to="/question" class="router-link">Question</RouterLink>

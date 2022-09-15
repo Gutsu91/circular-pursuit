@@ -3,7 +3,7 @@
   <h2>vue plateau</h2>
   <div>
     <p>Au tour de X de jouer</p>
-    <button>coucou</button>
+    <ThrowDice />
   </div>
 
   <ul class="board">
@@ -21,6 +21,8 @@
 import { ref, computed } from 'vue'
 import GameStarter from '../components/GameStarter.vue'
 import { useGameStore } from '../stores/game'
+import ThrowDice from '../components/ThrowDice.vue'
+
 
 
 
@@ -63,7 +65,6 @@ const shuffle = (array) => {
   return newArray
 }
 
-console.log(shuffle(datas))
 
 const randDatas = shuffle(datas)
 

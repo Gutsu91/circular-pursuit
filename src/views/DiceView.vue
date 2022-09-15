@@ -1,5 +1,6 @@
 <template>
 <main>
+  <h2>Et je jette le dééééé...</h2>
   <ThrowDice />
 </main>
 </template>
