@@ -50,6 +50,7 @@
     : alert(`c'est perdu`)
   }
   
+  
    // target elements with the "draggable" class
   interact('.draggable')
     .draggable({

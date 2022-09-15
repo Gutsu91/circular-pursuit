@@ -1,5 +1,5 @@
 <template><main>
-  <h2>Vue classement</h2>
+  <h2>Composant classement</h2>
   <h3 style="color:red">View has been deprecated, I placed the classement functionality inside a component</h3>
   
     <div id="yes-drop" class="drag-drop" data-value="airBnB"> airBnB </div>
@@ -21,17 +21,17 @@
       ⬇️ Économie sociale et solidaire ⬇️
       <div id="inner-dropzone" class="dropzone" data-container="solidaire"></div>
      </div>
-     <button ref="validate" @click="checkAnswer"> Valider </button>
+     <button  @click="checkAnswer"> Valider </button>
 </main>
   </template>
   
   <script setup>
   import interact from 'interactjs'
-  import { ref } from 'vue'
+  
   
   /* The dragging code for '.draggable' from the demo above
    * applies to this demo as well so it doesn't have to be repeated. */
-  const validate = ref(true)
+  
   const plateforme = []
   const solidaire = []
   const between = []

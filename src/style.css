@@ -18,6 +18,7 @@
 main {
   justify-self: flex-start;
   min-height: 50vh;
+  min-width: 70vw;
 }
 
 #app {
