@@ -12,8 +12,8 @@
     <div id="yes-drop" class="drag-drop" data-value="La ruche qui dit oui"> La ruche qui dit oui </div>
   
     <div id="outer-dropzone" class="dropzone">
-      ⬇️ Économie collaborative de plateforme ⬇️
-      <div id="inner-dropzone" class="dropzone" data-container="plateforme"></div>
+      
+      <div id="inner-dropzone" class="dropzone" data-container="plateforme">⬇️ Économie collaborative de plateforme ⬇️</div>
      </div>
      <div id="outer-dropzone3" class="dropzone dropzone-between">
       <div id="inner-dropzone" class="dropzone dropzone-between" data-container="between"></div></div>
@@ -219,62 +219,5 @@
   </script>
   
   <style>
-    #outer-dropzone {
-    height: 140px;
-  }
-  
-  #inner-dropzone {
-    height: 80px;
-  }
-  
-  .dropzone {
-    background-color: #bfe4ff;
-    border: dashed 4px transparent;
-    border-radius: 4px;
-    margin: 10px auto 30px;
-    padding: 10px;
-    width: 80%;
-    transition: background-color 0.3s;
-  }
-  
-  .dropzone-between {
-    border: dashed 4px transparent;
-    border-radius: 4px;
-    margin: 10px auto 30px;
-    padding: 10px;
-    width: 80%;
-    transition: background-color 0.3s;
-    background-color: #fff;
-  }
-  
-  .drop-active {
-    border-color: #aaa;
-  }
-  
-  .drop-target {
-    background-color: #29e;
-    border-color: #fff;
-    border-style: solid;
-  }
-  
-  .drag-drop {
-    display: inline-block;
-    min-width: 40px;
-    padding: 2em 0.5em;
-    margin: 1rem 0 0 1rem;
-  
-    color: #fff;
-    background-color: #29e;
-    border: solid 2px #fff;
-  
-    touch-action: none;
-    transform: translate(0px, 0px);
-  
-    transition: background-color 0.3s;
-  }
-  
-  .drag-drop.can-drop {
-    color: #000;
-    background-color: #4e4;
-  }
+
   </style>

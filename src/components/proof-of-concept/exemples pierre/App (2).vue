@@ -24,6 +24,7 @@ const parentjoueur = (value) => {
 </script>
 
 <template>
+  
   <header>
     <input type="text" v-model="newUser"> <button @click="addUser">+</button>
 

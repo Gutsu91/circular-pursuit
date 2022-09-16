@@ -101,3 +101,91 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.answer-wrapper {
+  z-index: 8999;
+  position: absolute;
+}
+
+#inner-dropzone {
+  height: 200px;
+  width: 100%;
+}
+
+.inner-dropzone {
+  border: 1px solid black;
+}
+
+#outer-dropzone {
+  margin: 10px auto;
+}
+
+.dropzone {
+  border-radius: 4px;
+  margin: 10px auto;
+  width: 50%;
+  transition: background-color 0.3s;
+  &-wrapper {
+    display:flex;
+    margin: 0 3rem;
+  }
+}
+
+.dropzone-between {
+  border: dashed 1px transparent;
+  border: none;
+  height:30px;
+  margin-bottom: 4rem;
+  width: 20%;
+}
+
+.drop-active {
+  border-color: #aaa;
+}
+
+
+.drag-drop {
+  display: inline-block;
+  min-width: 40px;
+  padding: 0.3rem 0.7rem;
+  color: #fff;
+  background-color: #29e;
+  border: solid 2px #fff;
+  z-index:9002;
+  touch-action: none;
+  transform: translate(0px, 0px);
+  font-style:italic;
+  transition: background-color 0.3s;
+}
+
+.drag-drop.can-drop {
+  color: #fff;
+  // background-color: #4e4;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.drag-drop-assoc {
+  width: 10%;
+}
+
+section.dropzone-order div {
+  display: flex;
+  border: 1px solid black;
+}
+
+.dropzone-order {
+  width: 100%;
+  display: flex;
+}
+
+div[data-id=container] {
+  border: none !important;
+  gap: 1rem;
+}
+
+.inner-dropzone-assoc {
+  border: 1px solid black;
+}
+
+.section-wrapper-assoc {display:flex;gap:1rem;margin: 0 1rem;}

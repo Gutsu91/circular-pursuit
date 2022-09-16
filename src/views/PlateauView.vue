@@ -9,7 +9,20 @@
   <ul class="board" v-if="randDatas.length > 0">
     <li class="cell start">Départ</li>
     <li v-for="(q, key) in randDatas" :class="test(q.theme)" class="cell">
-      {{key+1}}
+      <a href="" @click.prevent="question(key, q.number)" class="cell">{{key+1}} // {{q.number}}</a>
+      <Teleport to="body">
+        <div v-if="open === key" class="modal">
+        <div class="modal--inner">
+          <span @click="closeModal" class="modal--close">✕</span>
+            <h3>{{q.question}}</h3>
+            <QuestionType :qtype="q.qtype" :qnumber="q.number" :qresponse="q.response" :qchallenge="q.challenge" />
+        </div>
+        <div class="answerWrapper">
+          
+        </div>
+        </div>
+      </Teleport>
+
     </li>
     <li class="cell end">Arrivée</li>
   </ul>
@@ -23,9 +36,30 @@ import { ref, computed } from 'vue'
 import GameStarter from '../components/GameStarter.vue'
 import { useGameStore } from '../stores/game'
 import ThrowDice from '../components/ThrowDice.vue'
+import QuestionView from './QuestionView.vue'
+import Ordre from '../components/questions/Ordre.vue'
+import Classement from '../components/questions/Classement.vue'
+import Association from '../components/questions/Association.vue'
+import MultipleChoice from '../components/questions/MultipleChoice.vue'
+import SingleChoice from '../components/questions/SingleChoice.vue'
+import QuestionType from '../components/questions/QuestionType.vue'
 
 
+let open = ref()
+const question = (i, j) => {
+  // console.log(randDatas[i].qtype)
+  // console.log(gameStore.datasApi[j-1].question)
+  console.log(gameStore.datasApi[j-1])
+  open.value = i
+  // console.log(open.value)
+  document.querySelector('#coucou').style.position = 'fixed'
+  document.querySelector('#coucou').style.overflowY = 'hidden'
+}
 
+const closeModal = () => {
+  open.value = null
+  
+}
 
 const gameStore = useGameStore()
 
@@ -169,7 +203,43 @@ details[open] summary::marker {
   right: 10rem;
   position: absolute;
   line-height: 3rem;
+}
 
+a.cell {
+  width: 100%;
+  height: 100%;
+}
+
+.modal {
+  position: fixed;
+  background-color:rgba(0, 0, 0, 0.8);
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  color: white;
+  z-index:1;
+  overflow-x:hidden;
+  overflow-y: hidden;
+  &--inner {
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    background-color: white;
+    color: black;
+  }
+  &--close {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.3rem 0.7rem;
+    border: 1px solid;
+    border-radius: 2rem;
+    color: red;
+    z-index:90001;
+  }
 }
 
 </style>

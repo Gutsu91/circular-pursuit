@@ -15,7 +15,7 @@
       </div>
       <div class="fieldWrapper">
         <input type="checkbox" :v-model="checkboxUser3" @click="unlockInput3"  ref="checkboxUser3" data-id="checkboxUser3" />
-        <input type="text" class="name" placeholder="Joueur/équipe 3" v-model="newUser3" disabled="true" ref="newUser3" />
+        <input type="text" class="name" placeholder="Joueur/équipe 3" v-model="newUser3" disabled="true" ref="newUser3" id="newUser3"/>
         <button @click="addUser" class="buttonAddPlayer">+</button>
       </div>
       <div class="fieldWrapper">

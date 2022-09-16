@@ -137,7 +137,7 @@ interact('.drag-drop')
 </script>
 
 <style>
-  #outer-dropzone {
+  /* #outer-dropzone {
   height: 140px;
 }
 
@@ -178,8 +178,7 @@ interact('.drag-drop')
 .drag-drop {
   display: inline-block;
   min-width: 40px;
-  padding: 2em 0.5em;
-  margin: 1rem 0 0 1rem;
+  
 
   color: #fff;
   background-color: #29e;
@@ -194,5 +193,5 @@ interact('.drag-drop')
 .drag-drop.can-drop {
   color: #000;
   background-color: #4e4;
-}
+} */
 </style>

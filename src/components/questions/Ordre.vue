@@ -1,21 +1,21 @@
 <template>
   <section>
-    <h2>Composant ordre</h2>
-    <p>Classez ces états/régions du plus au moins pollueur</p>
-
     <div id="yes-drop" class="drag-drop" data-value="La Russie">La Russie</div>
     <div id="yes-drop" class="drag-drop" data-value="La Chine">La Chine</div>
     <div id="yes-drop" class="drag-drop" data-value="Les États-Unis">Les États-Unis</div>
     <div id="yes-drop" class="drag-drop" data-value="L'Union européenne">L'Union européenne</div>
     <div id="yes-drop" class="drag-drop" data-value="L'Inde">L'Inde</div>
 
-<div id="outer-dropzone" class="dropzone" style="height:120vh;" data-id="container">
-  <div id="inner-dropzone" class="dropzone" data-index="0">#1</div>
-  <div id="inner-dropzone" class="dropzone" data-index="1">#2</div>
-  <div id="inner-dropzone" class="dropzone" data-index="2">#3</div>
-  <div id="inner-dropzone" class="dropzone" data-index="3">#4</div>
-  <div id="inner-dropzone" class="dropzone" data-index="4">#5</div>
- </div>
+<section class="dropzone-wrapper dropzone-order">
+  <div id="outer-dropzone" class="dropzone" data-id="container">
+    <div id="inner-dropzone" class="dropzone" data-index="0">#1</div>
+    <div id="inner-dropzone" class="dropzone" data-index="1">#2</div>
+    <div id="inner-dropzone" class="dropzone" data-index="2">#3</div>
+    <div id="inner-dropzone" class="dropzone" data-index="3">#4</div>
+    <div id="inner-dropzone" class="dropzone" data-index="4">#5</div>
+   </div>
+</section>
+
 
  <button @click="checkAnswer"> Valider </button>
   </section>

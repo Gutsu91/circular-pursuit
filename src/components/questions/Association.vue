@@ -1,56 +1,58 @@
 <template>
-<h2> Composant association</h2>
-<p>Une vague de chaleur se définit comme l’observation de températures anormalement élevées pendant plusieurs jours consécutifs.</p>
-<p>Relier pour chaque période le nombre de vague de chaleur</p>
 
-  <div id="yes-drop" class="drag-drop drag-drop-assoc" data-value="26"> 26 </div>
-  <div id="yes-drop" class="drag-drop drag-drop-assoc" data-value="9"> 9 </div>
-  <div id="yes-drop" class="drag-drop drag-drop-assoc" data-value="4"> 4 </div>
-  <div id="yes-drop" class="drag-drop drag-drop-assoc" data-value="4"> 4 </div>
+  <div v-for="(a, i) in props.qresponse.answers2" id="yes-drop" :data-value="a" class="drag-drop drag-drop-assoc" >{{a}}</div>
 
-<div id="outer-dropzone" class="dropzone dropzone-assoc">
-  Avant 1960
-  <div id="inner-dropzone" class="dropzone " data-container="answerA"></div>
- </div>
+<section class="section-wrapper-assoc">
+  <div id="outer-dropzone" class="dropzone dropzone-assoc" v-for="(a, i) in props.qresponse.answers1">
+    <div id="inner-dropzone" class="dropzone inner-dropzone-assoc" :data-container="'answer'+i+1">{{a}}</div>
 
- <div id="outer-dropzone" class="dropzone">
-  Entre 1960 et 1980
-  <div id="inner-dropzone" class="dropzone" data-container="answerB"></div>
- </div>
-
- <div id="outer-dropzone" class="dropzone">
-  Entre 1980 et 2000
-  <div id="inner-dropzone" class="dropzone" data-container="answerC"></div>
- </div>
-
-
-   <div id="outer-dropzone" class="dropzone">
-    Depuis 2000
-    <div id="inner-dropzone" class="dropzone" data-container="answerD"></div>
+  </div>
+<!-- 
+  <div id="outer-dropzone" class="dropzone dropzone-assoc">
+    <div id="inner-dropzone" class="dropzone inner-dropzone-assoc" data-container="answerA">Avant 1960</div>
    </div>
- 
+  
+   <div id="outer-dropzone" class="dropzone">
+    
+    <div id="inner-dropzone" class="dropzone inner-dropzone-assoc" data-container="answerB">
+      Entre 1960 et 1980
+    </div>
+   </div>
+  
+   <div id="outer-dropzone" class="dropzone">
+    <div id="inner-dropzone" class="dropzone inner-dropzone-assoc" data-container="answerC">Entre 1980 et 2000</div>
+   </div>
+  
+  
+     <div id="outer-dropzone" class="dropzone">
+      <div id="inner-dropzone" class="dropzone inner-dropzone-assoc" data-container="answerD">Depuis 2000</div>
+     </div> -->
+  
+</section>
 
    <button @click="checkAnswer">Valider</button>
 </template>
 
 <script setup>
-
 import interact from 'interactjs'
+import { ref,defineProps } from 'vue'
 
-const answerA = []
-const answerB = []
-const answerC = []
-const answerD = []
+const props = defineProps(['qresponse'])
+
+const answer1 = ref([])
+const answer2 = ref([])
+const answer3 = ref([])
+const answer4 = ref([])
 
 
 const checkAnswer = () => {
-  answerA.includes('4') && answerB.includes('4') && answerC.includes('9') && answerD.includes('26')
+  answer1.value.includes('4') && answer2.value.includes('4') && answer3.value.includes('9') && answer4.value.includes('26')
   ? alert(`c'est gagné`)
   : alert(`c'est perdu`)
-  console.log(answerA)
-  console.log(answerB)
-  console.log(answerC)
-  console.log(answerD)
+  console.log(answer1.value)
+  console.log(answer2.value)
+  console.log(answer3.value)
+  console.log(answer4.value)
 }
 // target elements with the "draggable" class
 interact('.draggable')
@@ -133,36 +135,37 @@ interact('.dropzone').dropzone({
   ondrop: function (event) {
     const dragedElement = event.dragEvent.currentTarget.dataset.value
     const container = event.currentTarget.dataset.container 
+    console.log(dragedElement)
     // console.log(`${dragedElement} a été mis dans ${container}`)
     switch(container) {
-        case 'answerA':
+        case 'answer1':
           console.log(`${dragedElement} a été mis dans ${container}`)
-          if(answerB === dragedElement) { answerB = []}
-          if(answerC === dragedElement) { answerC = []}
-          if(answerD === dragedElement) {answerD = []}
-          answerA.push(dragedElement)
-          console.log(answerA)
+          if(answer2.value === dragedElement) { answer2.value = []}
+          if(answer3.value === dragedElement) { answer3.value = []}
+          if(answer4.value === dragedElement) { answer4.value = []}
+          answer1.value.push(dragedElement)
+          console.log(answer1.value)
           break
-        case 'answerB':
+        case 'answer2':
          console.log(`${dragedElement} a été mis dans ${container}`)
-          if(answerA === dragedElement) { answerA = []}
-          if(answerC === dragedElement) { answerC = []}
-          if(answerD === dragedElement) {answerD = []}
-          answerB.push(dragedElement)
+          if(answer1.value === dragedElement) { answer1.value = []}
+          if(answer3.value === dragedElement) { answer3.value = []}
+          if(answer4.value === dragedElement) { answer4.value = []}
+          answer2.value.push(dragedElement)
           break
-        case 'answerC':
+        case 'answer3':
           console.log(`${dragedElement} a été mis dans ${container}`)
-          if(answerB === dragedElement) { answerB = []}
-          if(answerA === dragedElement) { answerA = []}
-          if(answerD === dragedElement) {answerD = []}
-          answerC.push(dragedElement)
+          if(answer2.value === dragedElement) { answer2.value = []}
+          if(answer1.value === dragedElement) { answer1.value = []}
+          if(answer4.value === dragedElement) { answer4.value = []}
+          answer3.value.push(dragedElement)
           break
-        case 'answerD':
+        case 'answer4':
           console.log(`${dragedElement} a été mis dans ${container}`)
-          if(answerB === dragedElement) { answerB = []}
-          if(answerC === dragedElement) { answerC = []}
-          if(answerA === dragedElement) {answerA = []}
-          answerD.push(dragedElement)
+          if(answer2.value === dragedElement) { answer2.value = []}
+          if(answer3.value === dragedElement) { answer3.value = []}
+          if(answer1.value === dragedElement) { answer1.value = []}
+          answer4.value.push(dragedElement)
           break
 
     }
@@ -191,7 +194,5 @@ interact('.drag-drop')
 </script>
 
 <style>
-.drag-drop-assoc {
-  width: 10%;
-}
+
 </style>
